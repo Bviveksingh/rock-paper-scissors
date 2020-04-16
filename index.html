@@ -4,34 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <link rel="stylesheet" href="./css/styles.css">
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
 
+  <main>
+    <header id="score-section">
+      <div class="score-section-title">
+        <h2 class="score-section-titles">rock</h2>
+        <h2 class="score-section-titles">paper</h2>
+        <h2 class="score-section-titles">scissors</h2>
+      </div>
+      <div class="score-section-score">
+        <h5>score</h5>
+        <h1 id="score">0</h1>
+      </div>
+    </header>
+    <section id="action-section">
+      <div id="action-section-duel">
+        <div class="action-section-duel-commands" onclick="start_duel(0)" id="paper-command">
+          <div class="white-shadow-background"></div>
+          <div class="svgs" id="paper-svg"></div>
+        </div>
+        <div class="action-section-duel-commands" onclick="start_duel(1)" id="scissors-command">
+          <div class="white-shadow-background"></div>
+          <div class="svgs" id="scissors-svg"></div>
+        
+        </div>
+        <div class="action-section-duel-commands" onclick="start_duel(2)" id="rock-command">
+          <div class="white-shadow-background"></div>
+          <div class="svgs" id="rock-svg"></div>
+        </div>
+      </div>
+      <div id="action-section-result">
+        <div class="action-section-results" id="user-result-container">
+          <h3>you picked</h3>
+          <div class="result" id="user-result">
+            <div class="result-white-shadow-background"></div>
+            <div class="result-svg"></div>
+          </div>
+        </div>
+        <div class="action-section-result-main" id="main-result">
+          <div id="result-text-container">
+            <h1 id="result-text"></h1>
+          </div>
+          <div id="play-again">
+            <button onclick="play_again()">PLAY AGAIN</button>
+          </div>
+        </div>
+        <div class="action-section-results" id="computer-result-container">
+          <h3>the house picked</h3>
+          <div class="result" id="computer-result">
+            <div class="result-white-shadow-background"></div>
+            <div class="result-svg "></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="rules-toggler-section">
+      <button onclick="toggle_display('rules-section','flex');">RULES</button>
+      <div id="rules-section">
+        <div id="rules">
+          <h3 id="rules-text">rules</h3>
+          <div id="rules-close" onclick="toggle_display('rules-section','flex');"></div>
+          <div id="rules-svg"></div>          
+        </div>       
+      </div>
+    </section>
+  </main>
+
+
+
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
+<script src="./js/script.js"></script>
 </body>
 </html>
