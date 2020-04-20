@@ -7,7 +7,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Barlow Semi Condensed', sans-serif;
-  background-image: radial-gradient(#1f3756, #141539); }
+  background-image: radial-gradient(#1f3756, #141539);
+  overflow-y: hidden; }
   body main {
     width: 100%;
     height: 100%;
@@ -161,8 +162,10 @@ body {
     background-position: center;
     background-size: 40px 40px; }
   #action-section #action-section-result {
+    position: relative;
     width: 100%;
     max-width: 750px;
+    margin-top: 30px;
     display: flex;
     justify-content: space-evenly; }
     #action-section #action-section-result #user-result-container {
@@ -183,13 +186,30 @@ body {
           height: 200px; }
         #action-section #action-section-result #main-result {
           order: 2; } }
+    #action-section #action-section-result .radial-background {
+      display: block;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      z-index: -9999;
+      position: absolute;
+      background-image: repeating-radial-gradient(#1e1e48 25%, #1f3756 38%);
+      top: -15%;
+      opacity: 23%; }
+      @media screen and (max-width: 375px) {
+        #action-section #action-section-result .radial-background {
+          width: 300px;
+          height: 300px;
+          opacity: 25%;
+          top: -18%; } }
     #action-section #action-section-result .action-section-results {
       display: flex;
       height: 90%;
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      /*---SPECIFIC PROPERTIES JUST FOR COMPUTER RESULT--*/ }
       @media screen and (max-width: 375px) {
         #action-section #action-section-result .action-section-results {
           flex-direction: column-reverse; } }
@@ -208,7 +228,7 @@ body {
         border-radius: 50%;
         background: black;
         position: relative;
-        z-index: 1; }
+        z-index: -3; }
         @media screen and (max-width: 375px) {
           #action-section #action-section-result .action-section-results .result {
             width: 130px;
@@ -273,6 +293,19 @@ body {
         @media screen and (max-width: 375px) {
           #action-section #action-section-result .action-section-results .scissors {
             background-size: 45px 55px; } }
+      #action-section #action-section-result .action-section-results #dark-background-container {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        #action-section #action-section-result .action-section-results #dark-background-container #dark-background {
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          background: radial-gradient(#1f3756, #141539);
+          opacity: 60%; }
     #action-section #action-section-result .action-section-result-main {
       align-self: center; }
       @media screen and (max-width: 375px) {
@@ -288,7 +321,7 @@ body {
       #action-section #action-section-result .action-section-result-main #play-again {
         text-align: center; }
         #action-section #action-section-result .action-section-result-main #play-again button {
-          width: 100%;
+          width: 155px;
           height: 34px;
           background: #f5f5f5;
           font-size: 0.75em;
