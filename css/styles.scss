@@ -27,12 +27,19 @@ $colors:(
 }
 
 $mobile: 375px;
+$large-mobile:425px;
 
 @mixin mobile{
     @media screen and (max-width:#{$mobile}){
         @content
     }
-}
+};
+
+@mixin large-mobile{
+    @media screen and (max-width:#{$large-mobile}){
+        @content
+    }
+};
 
 
 
@@ -73,7 +80,14 @@ body{
     border-radius: 10px;
 
     @include mobile{
+        margin-top:10px;
         width:90%;
+        height:100px;
+    }
+
+    @include large-mobile{
+        margin-top:12px;
+        width:95%;
         height:100px;
     }
 
@@ -89,6 +103,10 @@ body{
             font-weight:700;
             @include mobile{
                 font-size:1.2em;
+            }
+
+            @include large-mobile{
+                font-size:1.4em;
             }
         }
     }
@@ -109,6 +127,10 @@ body{
             width:90px;
             height:70px;
         }
+        @include large-mobile{
+            width:95px;
+            height:75px;
+        }
         
         h5,#score{
             margin:0;
@@ -120,6 +142,9 @@ body{
             @include mobile{
                 font-size:0.7em;
             }
+            @include large-mobile{
+                font-size:0.9em;
+            }
         }
 
         #score{
@@ -127,6 +152,9 @@ body{
             color: getColorOrGradient($colors,dark-text);
             @include mobile{
                 font-size:2.2em;
+            }
+            @include large-mobile{
+                font-size:2.3em;
             }
         }
     }
@@ -144,7 +172,6 @@ body{
         width:100%;
         max-width:500px;
         position: relative;
-
         background: url('../images/bg-triangle.svg');
         background-repeat: no-repeat;
         background-position: center;
@@ -177,6 +204,10 @@ body{
         @include mobile{
             left:5%;
         }
+
+        @include large-mobile{
+            left:8%;
+        }
     }
 
     #scissors-command{
@@ -188,12 +219,16 @@ body{
         @include mobile{
             right:5%;
         }
+
+        @include large-mobile{
+            right:8%;
+        }
     }
 
     #rock-command{
         background:getColorOrGradient($gradients,rock);
-        bottom:20%;
-        left:37%;
+        bottom:18%;
+        left:35%;
         box-shadow: getColorOrGradient($colors, box-shadow-rock);
         
         @include mobile{
@@ -240,21 +275,21 @@ body{
         background: url('../images/icon-paper.svg');
         background-repeat:no-repeat;
         background-position: center;
-        background-size: 40px 50px;
+        background-size: 42px 50px;
     }
 
     #scissors-svg{
         background:url('../images/icon-scissors.svg');
         background-repeat:no-repeat;
         background-position: center;
-        background-size: 40px 50px;
+        background-size: 42px 50px;
     }
 
     #rock-svg{
         background:url('../images/icon-rock.svg');
         background-repeat:no-repeat;
         background-position: center;
-        background-size: 40px 40px;
+        background-size: 42px 42px;
     }
 
     #action-section-result{
@@ -292,6 +327,22 @@ body{
                 order:2;
             }
         }
+        @include large-mobile{
+            flex-wrap:wrap;
+            #user-result-container{
+                width:40%;
+                height:200px;
+            }
+            #computer-result-container{
+                order:1;
+                width:40%;
+                height:200px;
+            }
+    
+            #main-result{
+                order:2;
+            }
+        }
         .radial-background{
             display: block;
             width:600px;
@@ -309,6 +360,14 @@ body{
                 opacity: 25%;
                 top:-18%;
             }
+            @include large-mobile{
+                width:300px;
+                height:300px;
+                opacity: 25%;
+                top:-18%;
+            }
+
+
 
         }
 
@@ -323,6 +382,9 @@ body{
             @include mobile{
                 flex-direction: column-reverse;
             }
+            @include large-mobile{
+                flex-direction: column-reverse;
+            }
             
             h3{
                 font-weight: 600;
@@ -332,6 +394,11 @@ body{
 
                 @include mobile{
                     font-size:0.8em;
+                    letter-spacing: 0.1em;
+                }
+
+                @include large-mobile{
+                    font-size:0.9em;
                     letter-spacing: 0.1em;
                 }
             }
@@ -350,6 +417,10 @@ body{
                     width:130px;
                     height:130px;
                 }
+                @include large-mobile{
+                    width:140px;
+                    height:140px;
+                }
 
                 .result-white-shadow-background{
                     width:140px;
@@ -367,6 +438,12 @@ body{
                         height:100px;
                         left:13%;
                         top:12%;
+                    }
+                    @include large-mobile{
+                        width:110px;
+                        height:110px;
+                        left:11%;
+                        top:11%;
                     }
                 }
             }
@@ -397,6 +474,10 @@ body{
                     left:25%;
                     top:25%;
                 }
+                @include large-mobile{
+                    left:25%;
+                    top:25%;
+                }
             }
             .paper{
                 background: url('../images/icon-paper.svg');
@@ -405,6 +486,9 @@ body{
                 background-size: 55px 65px;
                 @include mobile{
                     background-size: 45px 55px;
+                }
+                @include large-mobile{
+                    background-size: 47px 57px;
                 }    
             }
 
@@ -416,6 +500,9 @@ body{
                 @include mobile{
                     background-size: 45px 50px;
                 }
+                @include large-mobile{
+                    background-size: 47px 52px;
+                }
             }
             .scissors{
                 background: url('../images/icon-scissors.svg');
@@ -424,6 +511,9 @@ body{
                 background-size: 55px 60px;
                 @include mobile{
                     background-size: 45px 55px;
+                }
+                @include large-mobile{
+                    background-size: 47px 57px;
                 }
             }
 
@@ -450,8 +540,13 @@ body{
 
         .action-section-result-main{
             align-self:center;
+            margin:0px;
 
             @include mobile{
+                align-self: auto;
+            }
+
+            @include large-mobile{
                 align-self: auto;
             }
 
@@ -463,7 +558,15 @@ body{
                     text-align: center;
                     color: getColorOrGradient($colors,white-smoke);
                     letter-spacing: 0.05em;
+                    @include mobile{
+                        font-size:2.1em;
+                    }
+                    @include large-mobile{
+                        font-size:2.2em;
+                    }
                 }
+
+               
             }
 
             #play-again{
@@ -495,8 +598,15 @@ body{
     margin-right:35px;
 
     @include mobile{
+        margin-top:5px;
         align-self: center;
         margin-right:0px;
+    }
+
+    @include large-mobile{
+        margin-top:5px;
+        align-self: center;
+        margin-right: 0px;
     }
 
     button{
@@ -547,6 +657,16 @@ body{
                 "rules-close" 
                 ;
             }
+            @include large-mobile{
+                width:100%;
+                height:100%;
+                border-radius:0px;
+                grid-template-areas:
+                "rules-text"
+                "rules-svg"
+                "rules-close" 
+                ;
+            }
         }
 
         #rules-text{
@@ -559,6 +679,12 @@ body{
             text-transform: uppercase;
 
             @include mobile{
+                justify-self: center;
+                margin-left:0px;
+                margin-top:40px;
+                font-size:1.7em;
+            }
+            @include large-mobile{
                 justify-self: center;
                 margin-left:0px;
                 margin-top:40px;
@@ -586,6 +712,12 @@ body{
                 margin-bottom:40px;
                 background-size: 20px 20px;
             }
+            @include large-mobile{
+                justify-self: center;
+                margin-right:0px;
+                margin-bottom:40px;
+                background-size: 20px 20px;
+            }
 
     
         }
@@ -602,6 +734,10 @@ body{
 
             @include mobile{
                 background-size: 270px 250px;
+            }
+
+            @include large-mobile{
+                background-size:280px 260px;
             }
           
         }
