@@ -83,8 +83,7 @@ body {
     position: relative;
     background: url("../images/bg-triangle.svg");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 250px 250px; }
+    background-position: center; }
   #action-section .action-section-duel-commands {
     width: 130px;
     height: 130px;
