@@ -148,6 +148,7 @@ body{
         background: url('../images/bg-triangle.svg');
         background-repeat: no-repeat;
         background-position: center;
+        background-size: 250px 250px;
 
     }
 
@@ -191,7 +192,7 @@ body{
 
     #rock-command{
         background:getColorOrGradient($gradients,rock);
-        bottom:18%;
+        bottom:20%;
         left:37%;
         box-shadow: getColorOrGradient($colors, box-shadow-rock);
         

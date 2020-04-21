@@ -207,6 +207,22 @@ function hide_elements(){
     toggle_display('dark-background-container','flex');
 }
 
+function toggle_rules_block(number){
+    
+    let element = document.getElementById('rules-section');
+    if(number == 0){
+        toggle_display('rules-section', 'flex');
+        element.classList.remove('slideOutDown');
+        element.classList.add('animated','slideInUp');
+    }
+    if(number == 1){
+        element.classList.remove('slideInUp');
+        element.classList.add('animated','slideOutDown');
+        setTimeout(()=>{toggle_display('rules-section', 'flex');},1000);
+    } 
+}
+
+
 function toggle_display(id, display_value){
     let element = document.getElementById(id);
     if(element.style.display === "none") element.style.display = display_value;

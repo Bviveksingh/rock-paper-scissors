@@ -83,7 +83,8 @@ body {
     position: relative;
     background: url("../images/bg-triangle.svg");
     background-repeat: no-repeat;
-    background-position: center; }
+    background-position: center;
+    background-size: 250px 250px; }
   #action-section .action-section-duel-commands {
     width: 130px;
     height: 130px;
@@ -113,7 +114,7 @@ body {
         right: 5%; } }
   #action-section #rock-command {
     background: radial-gradient(#dc2e4e, #dd405d);
-    bottom: 18%;
+    bottom: 20%;
     left: 37%;
     box-shadow: inset 0px -6px 3px #ae1e38; }
     @media screen and (max-width: 375px) {

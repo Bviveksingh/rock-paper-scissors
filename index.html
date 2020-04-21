@@ -74,11 +74,11 @@
       </div>
     </section>
     <section id="rules-toggler-section">
-      <button onclick="toggle_display('rules-section','flex');">RULES</button>
-      <div class="animated slideInUp" id="rules-section">
+      <button onclick="toggle_rules_block(0);">RULES</button>
+      <div id="rules-section">
         <div id="rules">
           <h3 id="rules-text">rules</h3>
-          <div id="rules-close" onclick="toggle_display('rules-section','flex');"></div>
+          <div id="rules-close" onclick="toggle_rules_block(1);"></div>
           <div id="rules-svg"></div>          
         </div>       
       </div>
