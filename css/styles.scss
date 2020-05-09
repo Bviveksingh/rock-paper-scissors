@@ -30,13 +30,13 @@ $mobile: 375px;
 $large-mobile:425px;
 
 @mixin mobile{
-    @media screen and (max-width:#{$mobile}){
+    @media (max-width:#{$mobile}){
         @content
     }
 };
 
 @mixin large-mobile{
-    @media screen and (max-width:#{$large-mobile}){
+    @media (max-width:#{$large-mobile}){
         @content
     }
 };
@@ -59,8 +59,6 @@ body{
     main{
         width:100%;
         height:100%;
-        // display:grid;
-        // justify-content: center;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -72,8 +70,9 @@ body{
     width:100%;
     max-width:600px;
     margin-top:40px;
-    height:110px;
+    height:auto;
     display: flex;
+    padding:20px 10px;
     justify-content: space-between;
     text-transform: uppercase;
     border:hsl(217, 16%, 45%) solid 2px;
@@ -82,13 +81,12 @@ body{
     @include mobile{
         margin-top:10px;
         width:90%;
-        height:100px;
+        
     }
 
     @include large-mobile{
         margin-top:12px;
-        width:95%;
-        height:100px;
+        width:90%;
     }
 
     .score-section-title{
@@ -164,19 +162,38 @@ body{
 #action-section{
     width:100%;
     max-width: 800px;
-    height:450px;
+    height:100%;
+    justify-self: center;
     display: flex;
     justify-content: center;
 
     #action-section-duel{
         width:100%;
         max-width:500px;
+        
+        height:100%;
+        max-height:90%;
         position: relative;
         background: url('../images/bg-triangle.svg');
         background-repeat: no-repeat;
+        background-size:80% 50%;
+        border:1px solid white;
         background-position: center;
-        
+        display: grid;
+        grid-template-areas: 
+        "paper-command scissors-command"
+        "rock-command rock-command"
+        ;
+        justify-items: center;
+        align-items: center;
 
+        @include mobile{
+            max-width:100%;
+        }
+
+        @include large-mobile{
+            max-width:100%;
+        }
     }
 
     .action-section-duel-commands{
@@ -186,6 +203,7 @@ body{
         border-radius: 50%;
         z-index:1;
         cursor:pointer;
+        
         
 
         @include mobile{
@@ -197,44 +215,23 @@ body{
 
     #paper-command{
         background: getColorOrGradient($gradients, paper);
-        left:15%;
-        top:10%;
+        grid-area:paper-command;
+        justify-self: flex-start;
         box-shadow: getColorOrGradient($colors, box-shadow-paper);
 
-        @include mobile{
-            left:5%;
-        }
-
-        @include large-mobile{
-            left:8%;
-        }
     }
 
     #scissors-command{
         background: getColorOrGradient($gradients,scissors);
-        right:15%;
-        top:10%;
+        grid-area:scissors-command;
+        justify-self: flex-end;
         box-shadow: getColorOrGradient($colors,box-shadow-scissors);
-
-        @include mobile{
-            right:5%;
-        }
-
-        @include large-mobile{
-            right:8%;
-        }
     }
 
     #rock-command{
         background:getColorOrGradient($gradients,rock);
-        bottom:18%;
-        left:35%;
-        box-shadow: getColorOrGradient($colors, box-shadow-rock);
-        
-        @include mobile{
-            left:35%;
-        }
-
+        grid-area:rock-command;
+        box-shadow: getColorOrGradient($colors, box-shadow-rock);        
     }
 
     .action-section-duel-commands .svgs{
@@ -295,8 +292,9 @@ body{
     #action-section-result{
         position: relative;
         width:100%;
+        border:1px solid white;
         max-width:750px;
-        margin-top:30px;
+        height:100%;
         display: flex;
         justify-content: space-evenly;
 
@@ -313,6 +311,8 @@ body{
 
         @include mobile{
             flex-wrap:wrap;
+            //Added now
+            align-items:center;
             #user-result-container{
                 width:40%;
                 height:200px;
@@ -351,20 +351,20 @@ body{
             z-index:-9999;
             position: absolute;
             background-image:repeating-radial-gradient(hsl(239, 42%, 20%) 25%,hsl(214, 47%, 23%) 38%);
-            top:-15%;
-            opacity: 23%;
+            // top:0%;
+            opacity: 13%;
 
             @include mobile{
                 width:300px;
                 height:300px;
-                opacity: 25%;
-                top:-18%;
+                opacity: 15%;
+                // top:-18%;
             }
             @include large-mobile{
                 width:300px;
                 height:300px;
-                opacity: 25%;
-                top:-18%;
+                opacity: 15%;
+                // top:-18%;
             }
 
 
@@ -373,10 +373,12 @@ body{
 
         .action-section-results{
             display: flex;
-            height:90%;
+            height:100%;
+            border:1px solid white;
             flex-direction: column;
-            justify-content: space-evenly;
             align-items: center;
+            //Added now
+            justify-content: center;
             text-transform: uppercase;
 
             @include mobile{
