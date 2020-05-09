@@ -84,7 +84,7 @@ function score_count(){
 
 
 async function start_duel(user_command){
-    toggle_display('action-section-duel','flex');
+    toggle_display('action-section-duel','grid');
     let display_user = await display_user_command(user_command);
     if(display_user) toggle_display('action-section-result','flex');
     let computer_command = await display_computer_command();
@@ -184,7 +184,7 @@ function set_cookie(computed_result){
 
 function play_again(){
     toggle_display('action-section-result','flex');
-    toggle_display('action-section-duel','flex');
+    toggle_display('action-section-duel','grid');
     toggle_display('main-result','flex');
     toggle_display('computer-result','flex');
     hide_radial_backgrounds();
