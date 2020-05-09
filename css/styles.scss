@@ -182,7 +182,6 @@ body{
         background: url('../images/bg-triangle.svg');
         background-repeat: no-repeat;
         background-size:80% 50%;
-        border:1px solid white;
         background-position: center;
         display: grid;
         grid-template-areas: 
@@ -308,7 +307,6 @@ body{
     #action-section-result{
         position: relative;
         width:100%;
-        border:1px solid white;
         max-width:750px;
         height:100%;
         display: flex;
@@ -390,7 +388,6 @@ body{
         .action-section-results{
             display: flex;
             height:100%;
-            border:1px solid white;
             flex-direction: column;
             align-items: center;
             //Added now
