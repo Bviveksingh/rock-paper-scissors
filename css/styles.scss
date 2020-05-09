@@ -28,7 +28,7 @@ $colors:(
 
 $mobile: 375px;
 $large-mobile:425px;
-
+$large-devices: 1366px;
 @mixin mobile{
     @media (max-width:#{$mobile}){
         @content
@@ -41,6 +41,11 @@ $large-mobile:425px;
     }
 };
 
+@mixin large-devices{
+    @media(max-width:#{$large-devices}){
+        @content
+    }
+}
 
 
 body,html{
@@ -194,6 +199,10 @@ body{
         @include large-mobile{
             max-width:100%;
         }
+
+        @include large-devices{
+            background-size:60% 50%;
+        }
     }
 
     .action-section-duel-commands{
@@ -219,6 +228,9 @@ body{
         justify-self: flex-start;
         box-shadow: getColorOrGradient($colors, box-shadow-paper);
 
+        @include large-devices{
+            margin-left:40px;
+        }
     }
 
     #scissors-command{
@@ -226,6 +238,10 @@ body{
         grid-area:scissors-command;
         justify-self: flex-end;
         box-shadow: getColorOrGradient($colors,box-shadow-scissors);
+
+        @include large-devices{
+            margin-right:40px;
+        }
     }
 
     #rock-command{

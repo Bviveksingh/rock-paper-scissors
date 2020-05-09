@@ -117,6 +117,9 @@ body {
     @media (max-width: 425px) {
       #action-section #action-section-duel {
         max-width: 100%; } }
+    @media (max-width: 1366px) {
+      #action-section #action-section-duel {
+        background-size: 60% 50%; } }
   #action-section .action-section-duel-commands {
     width: 130px;
     height: 130px;
@@ -133,11 +136,17 @@ body {
     grid-area: paper-command;
     justify-self: flex-start;
     box-shadow: inset 0px -6px 3px #1f3edb; }
+    @media (max-width: 1366px) {
+      #action-section #paper-command {
+        margin-left: 40px; } }
   #action-section #scissors-command {
     background: radial-gradient(#ec9e0e, #eca922);
     grid-area: scissors-command;
     justify-self: flex-end;
     box-shadow: inset 0px -6px 3px #a46e0a; }
+    @media (max-width: 1366px) {
+      #action-section #scissors-command {
+        margin-right: 40px; } }
   #action-section #rock-command {
     background: radial-gradient(#dc2e4e, #dd405d);
     grid-area: rock-command;
