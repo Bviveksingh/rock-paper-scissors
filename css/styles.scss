@@ -311,6 +311,7 @@ body{
         height:100%;
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
 
         #user-result-container{
             order:0;
@@ -325,7 +326,6 @@ body{
 
         @include mobile{
             flex-wrap:wrap;
-            //Added now
             align-items:center;
             #user-result-container{
                 width:40%;
@@ -343,6 +343,7 @@ body{
         }
         @include large-mobile{
             flex-wrap:wrap;
+            align-items: center;
             #user-result-container{
                 width:40%;
                 height:200px;
@@ -389,15 +390,17 @@ body{
             display: flex;
             height:100%;
             flex-direction: column;
-            align-items: center;
             //Added now
-            justify-content: center;
+            justify-content:center;
+            align-items: center;
             text-transform: uppercase;
 
             @include mobile{
+                margin-top:10px;
                 flex-direction: column-reverse;
             }
             @include large-mobile{
+                margin-top:10px;
                 flex-direction: column-reverse;
             }
             
@@ -405,16 +408,19 @@ body{
                 font-weight: 600;
                 letter-spacing: 0.2em;
                 text-align: center;
+                margin-bottom: 50px;
                 color: getColorOrGradient($colors,white-smoke);
 
                 @include mobile{
                     font-size:0.8em;
                     letter-spacing: 0.1em;
+                    margin-bottom: 0px;
                 }
 
                 @include large-mobile{
                     font-size:0.9em;
                     letter-spacing: 0.1em;
+                    margin-bottom: 0px;
                 }
             }
 
